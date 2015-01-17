@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 16:12:47 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 18:48:24 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,14 @@
 
 # define XWIN_SIZE 2000
 # define YWIN_SIZE 1200
-# define SPACE 40
-# define HEIGHT 10
+# define SPACE 2
+# define HEIGHT 3
 # define XBEGIN 1
 # define YBEGIN 400
 # define CST1 0.9
 # define CST2 0.7
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
-# define COLOR (WHITE - ((env->pt2d[i].memz) * 300))
-# define BCLR (WHITE - (((origin.memz * 280))))
-# define ACLR (WHITE - (origin.memz * 300))
-# define WAZZA (ft_color(origin, env))
 
 /*
 ** Struct list content each line of the map as integer
@@ -87,7 +83,7 @@ typedef struct s_pt3d	t_pt3d;
 struct					s_pt3d
 {
 	float				x;
-	int					y;
+	float				y;
 	float				z;
 	int					line;
 	t_pt3d				*stay_high;
