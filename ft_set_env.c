@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 17:30:35 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 14:41:21 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 15:28:59 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void		ft_set_env(t_env *env)
 	env->value.xvar = 0;
 	env->value.yvar = 0;
 	env->value.setup = 0;
+	env->value.color = 0;
 	return ;
 }

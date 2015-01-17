@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 15:02:41 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 15:32:07 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ static void		key_effect(int keycode, t_env *env)
 	if (keycode == 65293)
 		env->value.setup == 0 ? (env->value.setup = 1)
 			: (env->value.setup = 0);
+	if (keycode == 107)
+		env->value.color == 0 ? (env->value.color = 1)
+			: (env->value.color = 0);
 	if (keycode == 49)
 		env->value.proj = 0;
 	if (keycode == 50)

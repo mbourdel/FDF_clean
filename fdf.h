@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 14:51:40 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 16:12:47 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define COLOR (WHITE - ((env->pt2d[i].memz) * 300))
 # define BCLR (WHITE - (((origin.memz * 280))))
 # define ACLR (WHITE - (origin.memz * 300))
+# define WAZZA (ft_color(origin, env))
 
 /*
 ** Struct list content each line of the map as integer
@@ -76,6 +77,7 @@ struct					s_value
 	int					setup;
 	int					alt_max;
 	int					alt_min;
+	int					color;
 };
 
 /*
@@ -101,7 +103,7 @@ struct					s_pt2d
 	float				x;
 	float				y;
 	int					line;
-	int					memz;
+	float				memz;
 	t_pt2d				*stay_high;
 };
 typedef t_pt2d			*t_ls2d;

@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 16:13:23 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 19:04:23 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 16:29:43 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void		ft_draw_cone(t_pt2d origin, t_pt2d arrival, t_env *env)
 	int				e;
 	unsigned int	color;
 
-	color = ft_color(arrival, env);
+	origin.memz >= arrival.memz ? (color = ft_color(origin, env))
+		: (color = ft_color(arrival, env));
 	e = arrival.x - origin.x;
 	dx = e * 2;
 	dy = abs(arrival.y - origin.y) * 2;
@@ -44,7 +45,8 @@ void		ft_draw_ctwo(t_pt2d origin, t_pt2d arrival, t_env *env)
 	int				e;
 	unsigned int	color;
 
-	color = ft_color(arrival, env);
+	origin.memz >= arrival.memz ? (color = ft_color(origin, env))
+		: (color = ft_color(arrival, env));
 	e = arrival.x - origin.x;
 	dx = e * 2;
 	dy = abs(arrival.y - origin.y) * 2;
@@ -69,7 +71,8 @@ void		ft_draw_cfive(t_pt2d origin, t_pt2d arrival, t_env *env)
 	int				e;
 	unsigned int	color;
 
-	color = ft_color(arrival, env);
+	origin.memz >= arrival.memz ? (color = ft_color(origin, env))
+		: (color = ft_color(arrival, env));
 	e = arrival.y - origin.y;
 	dy = e * 2;
 	dx = abs(arrival.x - origin.x) * 2;
@@ -94,7 +97,8 @@ void		ft_draw_csix(t_pt2d origin, t_pt2d arrival, t_env *env)
 	int				e;
 	unsigned int	color;
 
-	color = ft_color(arrival, env);
+	origin.memz >= arrival.memz ? (color = ft_color(origin, env))
+		: (color = ft_color(arrival, env));
 	e = arrival.y - origin.y;
 	dy = e * 2;
 	dx = abs(arrival.x - origin.x) * 2;
