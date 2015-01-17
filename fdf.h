@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 11:28:54 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 14:51:40 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # define HEIGHT 10
 # define XBEGIN 1
 # define YBEGIN 400
-# define CST 0.9
+# define CST1 0.9
+# define CST2 0.7
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
 # define COLOR (WHITE - ((env->pt2d[i].memz) * 300))
@@ -63,11 +64,13 @@ struct					s_img
 typedef struct s_value	t_value;
 struct					s_value
 {
+	int					proj;
 	float				space;
 	int					xbegin;
 	int					ybegin;
-	int					height;
+	float				height;
 	float				cst;
+	float				cst2;
 	int					xvar;
 	int					yvar;
 	int					setup;
@@ -128,7 +131,10 @@ void					ft_set_env(t_env *env);
 */
 t_map					ft_get_the_map(int fd, t_map map);
 t_ls3d					ft_set_pt3d(t_map map, t_env *env);
+t_ls3d					ft_set2_pt3d(t_map map, t_env *env);
 t_ls2d					ft_set_pt2d(t_ls3d pt3d, t_env *env);
+t_ls2d					ft_set2_pt2d(t_ls3d pt3d, t_env *env);
+t_ls2d					ft_set3_pt2d(t_ls3d pt3d, t_env *env);
 int						ft_map(t_env *env);
 
 /*

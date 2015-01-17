@@ -6,7 +6,7 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/27 19:33:24 by mbourdel          #+#    #+#              #
-#    Updated: 2015/01/17 12:27:07 by mbourdel         ###   ########.fr        #
+#    Updated: 2015/01/17 14:38:21 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC = fdf.c ft_get_the_map.c get_next_line.c
 SRC += ft_set_pt3d.c ft_set_pt2d.c ft_make_the_taff.c
 SRC += ft_mlx_stuff.c ft_map.c ft_img.c ft_pixel_put_img.c
 SRC += ft_draw.c ft_octants.c ft_color.c ft_print_hud.c
-SRC += ft_set_env.c ft_altitude.c
+SRC += ft_set_env.c ft_altitude.c ft_set2_pt3d.c
+SRC += ft_set2_pt2d.c ft_set3_pt2d.c
 
 OBJ = $(SRC:.c=.o)
 
