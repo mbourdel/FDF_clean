@@ -6,18 +6,14 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 19:10:50 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 12:57:29 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		key_hook(int keycode, t_env *env)
+static void		key_hook_effect(int keycode, t_env *env)
 {
-	if (keycode == 65307)
-		exit(0);
-	if (env->fd == 0)
-		return (0);
 	if (keycode == 65363)
 		env->value.xvar += 30;
 	if (keycode == 65361)
@@ -37,6 +33,16 @@ int		key_hook(int keycode, t_env *env)
 	if (keycode == 65293)
 		env->value.setup == 0 ? (env->value.setup = 1)
 			: (env->value.setup = 0);
+	return ;
+}
+
+int				key_hook(int keycode, t_env *env)
+{
+	if (keycode == 65307)
+		exit(0);
+	if (env->fd == 0)
+		return (0);
+	key_hook_effect(keycode, env);
 	ft_map(env);
 	ft_putendl(ft_itoa(keycode));
 	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
@@ -45,7 +51,7 @@ int		key_hook(int keycode, t_env *env)
 	return (0);
 }
 
-int		expose_hook(t_env *env)
+int				expose_hook(t_env *env)
 {
 	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
 	ft_draw_pt2d(env);

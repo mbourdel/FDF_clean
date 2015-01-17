@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/01 19:07:09 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 18:30:00 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 12:51:55 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_ls3d	ft_stay_high(t_ls3d point, int *i, int size)
 
 t_ls3d			ft_set_pt3d(t_map map, t_env *env)
 {
-	int			xyz[2];
+	float		xyz[2];
 	t_ls3d		point;
 	int			i[3];
 
