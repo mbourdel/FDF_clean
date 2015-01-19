@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 18:45:53 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 19:03:13 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 15:36:06 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void			ft_altitude(t_env *env)
 {
 	int			i;
 
+	env->value.alt_max = env->pt2d[0].memz;
+	env->value.alt_min = env->pt2d[0].memz;
 	i = 0;
 	while (env->pt2d[i].x != 0)
 	{

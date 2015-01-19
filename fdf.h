@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 18:48:24 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 12:57:31 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,8 +148,10 @@ void					ft_img(t_env *env);
 */
 void					ft_draw_cone(t_pt2d origin, t_pt2d arrival, t_env *env);
 void					ft_draw_ctwo(t_pt2d origin, t_pt2d arrival, t_env *env);
-void					ft_draw_cfive(t_pt2d origin, t_pt2d arrival, t_env *env);
-void					ft_draw_csix(t_pt2d origin, t_pt2d arrival, t_env *env);
+void					ft_draw_cfive(t_pt2d origin, t_pt2d arrival,
+										t_env *env);
+void					ft_draw_csix(t_pt2d origin, t_pt2d arrival,
+										t_env *env);
 
 /*
 ** Function "make_the_taff" call all function on the expose
@@ -160,7 +162,8 @@ void					ft_draw(t_pt2d origin, t_pt2d arrival, t_env *env);
 /*
 ** Function for draw on the screen
 */
-void					ft_pixel_put_img(t_env *env, int x, int y, unsigned int color);
+void					ft_pixel_put_img(t_env *env, int x, int y,
+											unsigned int color);
 void					ft_print_hud(t_env *env);
 
 /*

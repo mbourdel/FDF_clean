@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 12:03:51 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 12:59:33 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 15:15:44 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			ft_draw_pt2d(t_env *env)
 	int		i;
 
 	i = 0;
-	while (env->pt2d[i].x != 0)
+	while (env->pt2d[i].x)
 	{
 		if (i > 0 && env->pt2d[i].line == env->pt2d[i - 1].line)
 			ft_draw(env->pt2d[i - 1], env->pt2d[i], env);
