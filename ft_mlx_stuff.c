@@ -6,38 +6,14 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/19 13:07:55 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 18:26:08 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void		key_effect(int keycode, t_env *env)
+static void		key_effect2(int keycode, t_env *env)
 {
-	if (keycode == 65363)
-		env->value.xvar += 30;
-	if (keycode == 65361)
-		env->value.xvar -= 30;
-	if (keycode == 65362)
-		env->value.yvar -= 20;
-	if (keycode == 65364)
-		env->value.yvar += 20;
-	if (keycode == 65451)
-		env->value.height *= 1.10;
-	if (keycode == 65453)
-		env->value.height *= 0.90;
-	if (keycode == 91 && env->value.space >= 1)
-	{
-		env->value.space -= 0.3;
-		if (abs(env->value.height) > 1.1)
-			env->value.height *= 0.990;
-	}
-	if (keycode == 93 && env->value.space <= 300)
-	{
-		env->value.space += 0.3;
-	//	if (abs(env->value.height) > 1.1)
-			env->value.height *= 1.010;
-	}
 	if (keycode == 65293)
 		env->value.setup == 0 ? (env->value.setup = 1)
 			: (env->value.setup = 0);
@@ -50,6 +26,35 @@ static void		key_effect(int keycode, t_env *env)
 		env->value.proj = 1;
 	if (keycode == 51)
 		env->value.proj = 2;
+	return ;
+}
+
+static void		key_effect(int keycode, t_env *env)
+{
+	if (keycode == 65363)
+		env->value.xvar += 30;
+	if (keycode == 65361)
+		env->value.xvar -= 30;
+	if (keycode == 65362)
+		env->value.yvar -= 20;
+	if (keycode == 65364)
+		env->value.yvar += 20;
+	if (keycode == 65451)
+		env->value.height *= 1.1;
+	if (keycode == 65453)
+		env->value.height *= 0.9;
+	if (keycode == 91 && env->value.space >= 1)
+	{
+		env->value.space *= 0.9;
+		if (abs(env->value.height) > 1.1)
+			env->value.height *= 0.9;
+	}
+	if (keycode == 93 && env->value.space <= 300)
+	{
+		env->value.space *= 1.1;
+		env->value.height *= 1.1;
+	}
+	key_effect2(keycode, env);
 	return ;
 }
 

@@ -6,11 +6,29 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 15:48:14 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 18:28:41 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 18:45:38 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+static void			color1(t_pt2d point, t_env *env, unsigned int *color)
+{
+
+	return ;
+}
+
+static void			color2(t_pt2d point, t_env *env, unsigned int *color)
+{
+
+	return ;
+}
+
+static void			color3(t_pt2d point, t_env *env, unsigned int *color)
+{
+
+	return ;
+}
 
 unsigned int		ft_color(t_pt2d point, t_env *env)
 {

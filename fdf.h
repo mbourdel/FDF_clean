@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/19 12:57:31 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/19 18:26:50 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 # define XWIN_SIZE 2000
 # define YWIN_SIZE 1200
-# define SPACE 2
-# define HEIGHT 3
+# define SPACE 5
+# define HEIGHT 5
 # define XBEGIN 1
 # define YBEGIN 400
 # define CST1 0.9
