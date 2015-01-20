@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 10:36:10 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 22:05:59 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/20 15:03:30 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_strrev(char *s);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_isnbr(char *c);
+char				*ft_ftoa(float nbr);
 
 #endif
