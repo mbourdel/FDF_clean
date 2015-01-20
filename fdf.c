@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 18:52:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 18:56:05 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/20 16:38:11 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ int			main(int ac, char **av)
 		mlx_expose_hook(env.win, expose_hook, &env);
 		mlx_loop(env.mlx);
 	}
-	close(env.fd);
 	return (0);
 }
