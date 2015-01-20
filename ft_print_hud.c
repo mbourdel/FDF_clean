@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 16:41:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 19:19:16 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/20 16:23:33 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void		ft_print_hud(t_env *env)
 		mlx_string_put(env->mlx, env->win, 20, 60, WHITE,
 			ft_strjoin("ALT MIN : ", ft_itoa(env->value.alt_min)));
 		mlx_string_put(env->mlx, env->win, 20, 80, WHITE,
-			ft_strjoin("ZOOM : ", ft_itoa(env->value.space)));
+			ft_strjoin("ZOOM : ", ft_ftoa(env->value.space)));
 		mlx_string_put(env->mlx, env->win, 20, 100, WHITE,
-			ft_strjoin("HEIGHT : ", ft_itoa(env->value.height)));
+			ft_strjoin("HEIGHT : ", ft_ftoa(env->value.height)));
 		mlx_string_put(env->mlx, env->win, 20, 120, WHITE,
-			ft_strjoin("CONSTANT : ", ft_itoa(env->value.cst)));
+			ft_strjoin("CONSTANT : ", ft_ftoa(env->value.cst)));
 	}
 	return ;
 }
