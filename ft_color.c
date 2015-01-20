@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 15:48:14 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/20 12:00:52 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/20 12:39:55 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ static void			color2(t_pt2d point, t_env *env, unsigned int *color)
 		*color = 0x009933;
 	if (point.memz < (env->value.alt_max * 0.10))
 		*color = 0x006600;
+	if (point.memz < (env->value.alt_max * 0.05))
+		*color = 0x005200;
+	if (point.memz < (env->value.alt_max * 0.02))
+		*color = 0x194D19;
 	return ;
 }
 
