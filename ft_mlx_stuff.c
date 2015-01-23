@@ -6,13 +6,30 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/19 18:26:08 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/23 17:34:19 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void		key_effect2(int keycode, t_env *env)
+static void		ft_destroy_map(t_env *env)
+{
+	t_map	tmp;
+
+	if (!env->map)
+		return ;
+	while (env->map)
+	{
+		tmp = env->map->nxt;
+		free(env->map->intline);
+		free(env->map);
+		env->map = tmp;
+	}
+	env->map = NULL;
+	return ;
+}
+
+static void		ft_key_effect2(int keycode, t_env *env)
 {
 	if (keycode == 65293)
 		env->value.setup == 0 ? (env->value.setup = 1)
@@ -20,16 +37,16 @@ static void		key_effect2(int keycode, t_env *env)
 	if (keycode == 107)
 		env->value.color == 0 ? (env->value.color = 1)
 			: (env->value.color = 0);
-	if (keycode == 49)
+	if (keycode == 49 && env->value.proj != 0)
 		env->value.proj = 0;
-	if (keycode == 50)
+	if (keycode == 50 && env->value.proj != 1)
 		env->value.proj = 1;
-	if (keycode == 51)
+	if (keycode == 51 && env->value.proj != 2)
 		env->value.proj = 2;
 	return ;
 }
 
-static void		key_effect(int keycode, t_env *env)
+static void		ft_key_effect(int keycode, t_env *env)
 {
 	if (keycode == 65363)
 		env->value.xvar += 30;
@@ -54,17 +71,19 @@ static void		key_effect(int keycode, t_env *env)
 		env->value.space *= 1.1;
 		env->value.height *= 1.1;
 	}
-	key_effect2(keycode, env);
+	ft_key_effect2(keycode, env);
 	return ;
 }
 
 int				key_hook(int keycode, t_env *env)
 {
 	if (keycode == 65307)
+	{
+		ft_destroy_map(env);
 		exit(0);
-	key_effect(keycode, env);
+	}
+	ft_key_effect(keycode, env);
 	ft_map(env);
-	ft_putendl(ft_itoa(keycode));
 	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
 	ft_draw_pt2d(env);
 	ft_print_hud(env);
