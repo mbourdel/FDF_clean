@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 19:35:36 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/20 17:51:30 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/02/07 15:25:42 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ char		*ft_itoa(int n)
 	if (n < 0)
 		buff[i++] = '-';
 	str = ft_memalloc((size_t)i + 1);
-	if (n == -2147483648)
-		return ("-2147483648");
+	if (n < -2147483647 || n > 2147483646)
+		return (n < -2147483647 ? ft_strdup("-2147483648") :
+		ft_strdup("2147483647"));
 	else if (n == 0)
 		str[0] = '0';
 	while (--i >= 0)
