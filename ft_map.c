@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/19 14:03:58 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/23 18:53:23 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/02/07 18:39:37 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void		destroy_old_pt2d(t_env *env)
 	int		i;
 
 	i = -1;
-	while (env->pt2d[++i].x)
+	while ((int)env->pt2d[++i].x)
 		free(env->pt2d[i].stay_high);
-	if (env->pt2d[0].x)
+	if ((int)env->pt2d[0].x)
 		free(env->pt2d);
 	return ;
 }
 
 static void		destroy_old_pt3d(t_ls3d pt3d)
 {
-	if (pt3d[0].x)
+	if ((int)pt3d[0].x)
 		free(pt3d);
 	return ;
 }
