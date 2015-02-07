@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 19:55:12 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/04 17:14:41 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/02/07 18:34:03 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int		ft_isnbr(char *c)
 {
-	if (*c == '-')
+	if (*c == '-' || *c == '+')
 		c++;
+	if (!*c)
+		return (0);
 	while (*c)
 	{
 		if (!(ft_isdigit(*c)))
