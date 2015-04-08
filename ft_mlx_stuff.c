@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/23 17:34:19 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 20:18:28 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,61 +31,66 @@ static void		ft_destroy_map(t_env *env)
 
 static void		ft_key_effect2(int keycode, t_env *env)
 {
-	if (keycode == 65293)
+	if (keycode == ENTER)
 		env->value.setup == 0 ? (env->value.setup = 1)
 			: (env->value.setup = 0);
-	if (keycode == 107)
+	else if (keycode == KK)
 		env->value.color == 0 ? (env->value.color = 1)
 			: (env->value.color = 0);
-	if (keycode == 49 && env->value.proj != 0)
+	else if (keycode == 18 && env->value.proj != 0)
 		env->value.proj = 0;
-	if (keycode == 50 && env->value.proj != 1)
+	else if (keycode == 19 && env->value.proj != 1)
 		env->value.proj = 1;
-	if (keycode == 51 && env->value.proj != 2)
+	else if (keycode == 20 && env->value.proj != 2)
 		env->value.proj = 2;
 	return ;
 }
 
 static void		ft_key_effect(int keycode, t_env *env)
 {
-	if (keycode == 65363)
+	if (keycode == RIGHT)
 		env->value.xvar += 30;
-	if (keycode == 65361)
+	else if (keycode == LEFT)
 		env->value.xvar -= 30;
-	if (keycode == 65362)
+	else if (keycode == UP)
 		env->value.yvar -= 20;
-	if (keycode == 65364)
+	else if (keycode == DOWN)
 		env->value.yvar += 20;
-	if (keycode == 65451)
+	else if (keycode == PLUS)
 		env->value.height *= 1.1;
-	if (keycode == 65453)
+	else if (keycode == MOIN)
 		env->value.height *= 0.9;
-	if (keycode == 91 && env->value.space >= 1)
+	else if (keycode == CRO_OP && env->value.space >= 1)
 	{
 		env->value.space *= 0.9;
 		if (abs(env->value.height) > 1.1)
 			env->value.height *= 0.9;
 	}
-	if (keycode == 93 && env->value.space <= 300)
+	else if (keycode == CRO_OF && env->value.space <= 300)
 	{
 		env->value.space *= 1.1;
 		env->value.height *= 1.1;
 	}
-	ft_key_effect2(keycode, env);
+	else
+		ft_key_effect2(keycode, env);
 	return ;
 }
 
 int				key_hook(int keycode, t_env *env)
 {
-	if (keycode == 65307)
+	if (keycode == ESC)
 	{
 		ft_destroy_map(env);
 		exit(0);
 	}
 	ft_key_effect(keycode, env);
+	ft_putendl("map fail?");
 	ft_map(env);
+	ft_putendl("clean fail?");
 	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
+	ft_putendl("draw fail?");
 	ft_draw_pt2d(env);
+	ft_putendl("other fail?");
 	ft_print_hud(env);
 	return (0);
 }

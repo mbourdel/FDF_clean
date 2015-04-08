@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/08 18:58:30 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 23:00:51 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,27 @@
 
 # define XWIN_SIZE 2000
 # define YWIN_SIZE 1200
-# define SPACE 5
-# define HEIGHT 5
+# define SPACE 15
+# define HEIGHT 10
 # define XBEGIN 1
 # define YBEGIN 400
 # define CST1 0.9
 # define CST2 0.7
 # define WHITE 0xFFFFFF
 # define RED 0xFF0000
+
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define ESC 53
+# define ENTER 36
+# define SPACBAR 49
+# define KK 40
+# define PLUS 69
+# define MOIN 78
+# define CRO_OP 33
+# define CRO_OF 30
 
 /*
 ** Struct list content each line of the map as integer

@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/01 19:07:09 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/17 13:16:49 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 21:52:48 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ t_ls3d			ft_set2_pt3d(t_map map, t_env *env)
 		map = map->nxt;
 		i[2] += 1;
 	}
+	point[i[1]].x = 0;
 	return (point);
 }

@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 18:52:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/23 19:09:59 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 19:57:51 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int			main(int ac, char **av)
 
 	ft_set_env(&env);
 	if (ac != 2)
-		ft_putstr("ERROR: invalid arguments\n");
-	else if ((env.fd = open(av[1], O_RDONLY)) < 0)
 		ft_putstr("ERROR: invalid arguments\n");
 	else if ((env.fd = open(av[1], O_RDONLY)) < 0)
 		ft_putstr("ERROR: invalid arguments\n");

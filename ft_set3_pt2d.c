@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/05 19:08:54 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/19 15:12:03 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 21:53:46 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ t_ls2d			ft_set3_pt2d(t_ls3d pt3d, t_env *env)
 		point[i].line = pt3d[i].line;
 		i++;
 	}
+	point[i].x = 0;
 	return (point);
 }

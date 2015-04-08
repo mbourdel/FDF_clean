@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/19 14:03:58 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/02/07 18:39:37 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 20:32:41 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void		destroy_old_pt2d(t_env *env)
 {
 	int		i;
 
+	ft_putendl("\tdestroy pt2d check");
 	i = -1;
 	while ((int)env->pt2d[++i].x)
 		free(env->pt2d[i].stay_high);
@@ -26,6 +27,7 @@ static void		destroy_old_pt2d(t_env *env)
 
 static void		destroy_old_pt3d(t_ls3d pt3d)
 {
+	ft_putendl("\tdestroy pt3d check");
 	if ((int)pt3d[0].x)
 		free(pt3d);
 	return ;
@@ -35,11 +37,14 @@ static void		ft_change_proj(t_env *env)
 {
 	t_ls3d		pt3d;
 
+	ft_putendl("\tchange proj check");
 	if (env->value.proj == 0)
 	{
 		env->value.xbegin = XBEGIN;
 		env->value.ybegin = YBEGIN;
+		ft_putendl("\t\tset pt3d check");
 		pt3d = ft_set_pt3d(env->map, env);
+		ft_putendl("\t\tset pt2d check");
 		env->pt2d = ft_set_pt2d(pt3d, env);
 	}
 	if (env->value.proj == 1)
@@ -73,7 +78,8 @@ int				ft_map(t_env *env)
 		if (env->map == NULL)
 			return (1);
 	}
-	destroy_old_pt2d(env);
+	else
+		destroy_old_pt2d(env);
 	ft_change_proj(env);
 	return (0);
 }
