@@ -6,7 +6,7 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/27 19:33:24 by mbourdel          #+#    #+#              #
-#    Updated: 2015/01/17 14:38:21 by mbourdel         ###   ########.fr        #
+#    Updated: 2015/04/08 19:01:50 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ = $(SRC:.c=.o)
 
 LIBFT_PATH = ./libft/
 
-MLX = -L/usr/X11/lib -lmlx -lXext -lX11
+MLX = maclibx/libmlx.a -framework OpenGL -framework AppKit
 
 FLAG = -Wall -Werror -Wextra
 
@@ -41,6 +41,7 @@ all: $(NAME)
 
 $(NAME):
 	@cd $(LIBFT_PATH); $(MAKE) -f Makefile
+	@cd ./maclibx/; $(MAKE) -f Makefile
 	@gcc $(FLAG) $(SRC_PATH)$(SRC) -o $(NAME) $(LIBFT_PATH)libft.a $(MLX)
 	@echo "${GREEN}"
 	@echo "     ████████╗██╗  ██╗██╗███████╗    ██╗███████╗"

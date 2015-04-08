@@ -6,14 +6,14 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/19 18:26:50 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 18:58:30 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include <mlx.h>
+# include "mlx.h"
 # include <math.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
