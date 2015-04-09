@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 21:31:05 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/08 23:00:51 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 23:27:13 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ struct					s_pt2d
 	float				x;
 	float				y;
 	int					line;
-	float				memz;
+	int					memz;
 	t_pt2d				*stay_high;
 };
 typedef t_pt2d			*t_ls2d;

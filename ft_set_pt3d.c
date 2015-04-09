@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/01 19:07:09 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/08 21:48:34 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/09 01:30:04 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ t_ls3d			ft_set_pt3d(t_map map, t_env *env)
 	i[2] = 0;
 	point = (t_ls3d)malloc(sizeof(t_pt3d) * (ft_nb_point(map) + 1));
 	xyz[1] = env->value.ybegin;
-	while (map != NULL)
+	while (map != NULL && ((xyz[0] = env->value.xbegin) || 1))
 	{
-		xyz[0] = env->value.xbegin;
 		i[0] = 0;
 		while (i[0] < map->size)
 		{

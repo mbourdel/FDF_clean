@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 15:48:14 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/08 22:59:54 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/08 23:22:05 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 static void			color1(t_pt2d point, t_env *env, unsigned int *color)
 {
-	if ((float)point.memz > (env->value.alt_max * 0.8))
+	if (point.memz > (env->value.alt_max * 0.8))
 		*color = 0xFFFFFF;
-	else if ((float)point.memz > (env->value.alt_max * 0.55)
-				&& ((float)point.memz <= (env->value.alt_max * 0.8)))
+	else if (point.memz > (env->value.alt_max * 0.55)
+				&& (point.memz <= (env->value.alt_max * 0.8)))
 		*color = 0x663300;
 	return ;
 }
 
 static void			color2(t_pt2d point, t_env *env, unsigned int *color)
 {
-	if ((float)point.memz < (env->value.alt_max * 0.55))
+	if (point.memz < (env->value.alt_max * 0.55))
 		*color = 0x996633;
-	if ((float)point.memz < (env->value.alt_max * 0.40))
+	if (point.memz < (env->value.alt_max * 0.40))
 		*color = 0xD1A319;
-	if ((float)point.memz < (env->value.alt_max * 0.30))
+	if (point.memz < (env->value.alt_max * 0.30))
 		*color = 0x669900;
-	if ((float)point.memz < (env->value.alt_max * 0.20))
+	if (point.memz < (env->value.alt_max * 0.20))
 		*color = 0x009900;
-	if ((float)point.memz < (env->value.alt_max * 0.15))
+	if (point.memz < (env->value.alt_max * 0.15))
 		*color = 0x009933;
-	if ((float)point.memz < (env->value.alt_max * 0.10))
+	if (point.memz < (env->value.alt_max * 0.10))
 		*color = 0x006600;
-	if ((float)point.memz < (env->value.alt_max * 0.05))
+	if (point.memz < (env->value.alt_max * 0.05))
 		*color = 0x005200;
-	if ((float)point.memz < (env->value.alt_max * 0.02))
+	if (point.memz < (env->value.alt_max * 0.02))
 		*color = 0x194D19;
 	return ;
 }
@@ -48,7 +48,7 @@ static void			color3(t_pt2d point, t_env *env, unsigned int *color)
 	if (point.memz < 0)
 	{
 		*color = 0x0099FF;
-		if ((float)point.memz < (env->value.alt_min * 0.7))
+		if (point.memz < (env->value.alt_min * 0.7))
 			*color = 0x0000FF;
 	}
 	return ;
