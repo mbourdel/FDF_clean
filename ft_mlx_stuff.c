@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/09 01:02:08 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/10 16:41:27 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,11 @@ int				key_hook(int keycode, t_env *env)
 	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
 	ft_draw_pt2d(env);
 	ft_print_hud(env);
+	ft_putstr("data content: ");
+	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8)], 1);
+	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8) + 1], 1);
+	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8) + 2], 1);
+	ft_putchar('\n');
 	return (0);
 }
 

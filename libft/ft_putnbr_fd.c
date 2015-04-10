@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 18:47:38 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:12:42 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/10 16:13:33 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	char	*s;
+
+	s = ft_itoa(n);
+	ft_putstr_fd(s, fd);
+	free(s);
 }
