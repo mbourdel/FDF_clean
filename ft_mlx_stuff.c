@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/06 10:44:24 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/10 16:41:27 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/28 12:28:19 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void		ft_key_effect(int keycode, t_env *env)
 	else if (keycode == CRO_OP && env->value.space >= 1)
 	{
 		env->value.space *= 0.9;
-		if (abs(env->value.height) > 1.1)
+		if (fabs(env->value.height) > 1.1)
 			env->value.height *= 0.9;
 	}
 	else if (keycode == CRO_OF && env->value.space <= 300)
@@ -84,14 +84,10 @@ int				key_hook(int keycode, t_env *env)
 	}
 	ft_key_effect(keycode, env);
 	ft_map(env);
-	ft_bzero(env->img.data, (XWIN_SIZE * YWIN_SIZE * (env->img.bpp / 8)));
+	ft_bzero(env->img.data,
+			(YWIN_SIZE * env->img.sizeline + XWIN_SIZE * (env->img.bpp / 8)));
 	ft_draw_pt2d(env);
 	ft_print_hud(env);
-	ft_putstr("data content: ");
-	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8)], 1);
-	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8) + 1], 1);
-	write(1, &env->img.data[(100 * env->img.sizeline) + (100 * env->img.bpp / 8) + 2], 1);
-	ft_putchar('\n');
 	return (0);
 }
 

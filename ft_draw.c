@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/04 13:24:57 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/15 16:15:05 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/04/28 15:40:18 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void			ft_draw(t_pt2d origin, t_pt2d arrival, t_env *env)
 {
-	int		dx;
-	int		dy;
+	float		dx;
+	float		dy;
 
 	dx = arrival.x - origin.x;
 	dy = arrival.y - origin.y;
-	if (abs(dx) > abs(dy))
+	if (fabs(dx) > fabs(dy))
 	{
 		if (dx > 0)
 			dy <= 0 ? ft_draw_cone(origin, arrival, env)
