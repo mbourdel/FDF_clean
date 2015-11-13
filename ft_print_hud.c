@@ -6,13 +6,13 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 16:41:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/04/09 03:26:50 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/13 16:26:01 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void ft_hud2_print(t_env *env)
+static void	ft_hud2_print(t_env *env)
 {
 	char	*s;
 	char	*nbr;
